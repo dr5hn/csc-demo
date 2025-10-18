@@ -166,6 +166,12 @@ function renderRegions(regions) {
       </td>
     </tr>
   `).join('');
+
+  // Update count badge
+  const countElement = document.getElementById('regions-count');
+  if (countElement) {
+    countElement.textContent = regions.length;
+  }
 }
 
 async function filterSubregions(regionId) {
@@ -175,9 +181,19 @@ async function filterSubregions(regionId) {
   }
   const subregions = await getFromIndex('subregions', 'region_id', regionId);
   renderSubregions(subregions);
+
+  // Clear dependent columns
   document.querySelector('.countries-tb').innerHTML = '';
   document.querySelector('.states-tb').innerHTML = '';
   document.querySelector('.cities-tb').innerHTML = '';
+
+  // Reset count badges for cleared columns
+  const countriesCount = document.getElementById('countries-count');
+  const statesCount = document.getElementById('states-count');
+  const citiesCount = document.getElementById('cities-count');
+  if (countriesCount) countriesCount.textContent = '0';
+  if (statesCount) statesCount.textContent = '0';
+  if (citiesCount) citiesCount.textContent = '0';
 }
 
 async function getFromIndex(storeName, indexName, value) {
@@ -212,13 +228,27 @@ function renderSubregions(subregions) {
       </td>
     </tr>
   `).join('') : '<tr><td class="border px-4 py-2">No Subregions Found.</td></tr>';
+
+  // Update count badge
+  const countElement = document.getElementById('subregions-count');
+  if (countElement) {
+    countElement.textContent = subregions.length;
+  }
 }
 
 async function filterCountries(subregionId) {
   const countries = await getFromIndex('countries', 'subregion_id', subregionId);
   renderCountries(countries);
+
+  // Clear dependent columns
   document.querySelector('.states-tb').innerHTML = '';
   document.querySelector('.cities-tb').innerHTML = '';
+
+  // Reset count badges for cleared columns
+  const statesCount = document.getElementById('states-count');
+  const citiesCount = document.getElementById('cities-count');
+  if (statesCount) statesCount.textContent = '0';
+  if (citiesCount) citiesCount.textContent = '0';
 }
 
 function renderCountries(countries) {
@@ -243,12 +273,24 @@ function renderCountries(countries) {
       </td>
     </tr>
   `).join('');
+
+  // Update count badge
+  const countElement = document.getElementById('countries-count');
+  if (countElement) {
+    countElement.textContent = countries.length;
+  }
 }
 
 async function filterStates(countryId, countryCode) {
   const states = await getFromIndex('states', 'country_id', countryId);
   renderStates(states, countryCode);
+
+  // Clear dependent column
   document.querySelector('.cities-tb').innerHTML = '';
+
+  // Reset count badge for cleared column
+  const citiesCount = document.getElementById('cities-count');
+  if (citiesCount) citiesCount.textContent = '0';
 }
 
 function renderStates(states, countryCode) {
@@ -273,6 +315,12 @@ function renderStates(states, countryCode) {
       </td>
     </tr>
   `).join('') : '<tr><td class="border px-4 py-2">No States Found.</td></tr>';
+
+  // Update count badge
+  const countElement = document.getElementById('states-count');
+  if (countElement) {
+    countElement.textContent = states.length;
+  }
 }
 
 async function filterCities(stateId, countryCode) {
@@ -313,6 +361,12 @@ function renderCities(cities) {
       </td>
     </tr>
   `).join('') : '<tr><td class="border px-4 py-2">No Cities Found.</td></tr>';
+
+  // Update count badge
+  const countElement = document.getElementById('cities-count');
+  if (countElement) {
+    countElement.textContent = cities.length;
+  }
 }
 
 function filter(type) {
