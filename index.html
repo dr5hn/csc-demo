@@ -4,10 +4,56 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Interactive demo of the Countries States Cities Database - Browse 250+ countries, 5000+ states, and 150,000+ cities" />
-    <meta name="author" content="dr5hn" />
 
-    <title>🌍 Countries States Cities Database - Interactive Demo</title>
+    <!-- Primary Meta Tags -->
+    <title>Countries States Cities Database - Interactive Demo</title>
+    <meta name="title" content="Countries States Cities Database - Interactive Demo" />
+    <meta name="description" content="Explore the world's most comprehensive geographic database. Browse 250+ countries, 5,000+ states, and 150,000+ cities with detailed information including coordinates, timezones, and more." />
+    <meta name="keywords" content="countries, states, cities, database, API, geographic data, world cities, country list, state list, city list, ISO codes, timezones, coordinates" />
+    <meta name="author" content="dr5hn" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dr5hn.github.io/csc-demo/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://demo.countrystatecity.in/" />
+    <meta property="og:title" content="Countries States Cities Database - Interactive Demo" />
+    <meta property="og:description" content="Explore the world's most comprehensive geographic database. Browse 250+ countries, 5,000+ states, and 150,000+ cities." />
+    <meta property="og:image" content="https://demo.countrystatecity.in/og-image.png" />
+    <meta property="og:site_name" content="CSC Database Demo" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://demo.countrystatecity.in/" />
+    <meta name="twitter:title" content="Countries States Cities Database - Interactive Demo" />
+    <meta name="twitter:description" content="Explore the world's most comprehensive geographic database. Browse 250+ countries, 5,000+ states, and 150,000+ cities." />
+    <meta name="twitter:image" content="https://demo.countrystatecity.in/og-image.png" />
+    <meta name="twitter:creator" content="@dr5hn" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="CountryStateCity Demo Website" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1DP2MYN5Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1DP2MYN5Q');
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
 
     <!-- Vendor CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,34 +63,43 @@
 </head>
 
 <body class="bg-gray-50 font-sans leading-normal tracking-normal">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-indigo-600 to-purple-600 p-3 mt-0 w-full z-20 top-0 shadow-lg">
+    <nav class="bg-gradient-to-r from-indigo-600 to-purple-600 p-3 mt-0 w-full z-20 top-0 shadow-lg" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
             <div class="flex items-center text-white font-bold">
-                <span class="text-xl md:text-2xl pl-2">🌍 CSC Database</span>
+                <span class="text-xl md:text-2xl pl-2" role="heading" aria-level="1">CSC Database</span>
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobileMenuBtn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="mobileMenuBtn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
             <!-- Desktop menu -->
-            <div class="hidden md:flex items-center gap-3">
-                <a href="https://www.npmjs.com/package/@countrystatecity/countries"
-                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">📦 NPM</a>
+            <div class="hidden md:flex items-center gap-2">
                 <a href="https://countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">🚀 API</a>
+                   target="_blank" rel="noopener noreferrer">API</a>
                 <a href="https://export.countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">🛠️ Export</a>
+                   target="_blank" rel="noopener noreferrer">Export</a>
+                <a href="https://www.npmjs.com/package/@countrystatecity/countries"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">NPM</a>
+                <a href="https://pypi.org/project/countrystatecity-countries/"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">PyPI</a>
                 <a href="https://manager.countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">📝 Update</a>
+                   target="_blank" rel="noopener noreferrer">Update</a>
+                <a href="https://countrystatecity.org/"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">Encyclopedia</a>
                 <a href="https://github.com/dr5hn/countries-states-cities-database" class="github" target="_blank"
                     rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -57,18 +112,24 @@
         <!-- Mobile menu -->
         <div id="mobileMenu" class="md:hidden">
             <div class="flex flex-col space-y-2 mt-3 pb-2">
-                <a href="https://www.npmjs.com/package/@countrystatecity/countries"
-                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">📦 NPM Package</a>
                 <a href="https://countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">🚀 API Service</a>
+                   target="_blank" rel="noopener noreferrer">API Service</a>
                 <a href="https://export.countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">🛠️ Export Tool</a>
+                   target="_blank" rel="noopener noreferrer">Export Tool</a>
+                <a href="https://www.npmjs.com/package/@countrystatecity/countries"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">NPM Package</a>
+                <a href="https://pypi.org/project/countrystatecity-countries/"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">PyPI Package</a>
                 <a href="https://manager.countrystatecity.in/"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
-                   target="_blank" rel="noopener noreferrer">📝 Update Tool</a>
+                   target="_blank" rel="noopener noreferrer">Update Tool</a>
+                <a href="https://countrystatecity.org/"
+                   class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+                   target="_blank" rel="noopener noreferrer">Geographic Encyclopedia</a>
                 <a href="https://github.com/dr5hn/countries-states-cities-database"
                    class="text-white text-sm hover:bg-white/10 px-3 py-2 rounded-lg transition-colors flex items-center gap-2"
                    target="_blank" rel="noopener noreferrer">
@@ -84,62 +145,65 @@
     </nav>
 
     <!-- Stats Bar -->
-    <div class="bg-white border-b border-gray-200 mt-2 shadow-sm">
+    <div class="bg-white border-b border-gray-200 mt-2 shadow-sm" role="region" aria-label="Database statistics">
         <div class="container mx-auto px-3 py-2">
             <div class="flex flex-wrap justify-around gap-2 text-center">
-                <div class="stat-item">
-                    <div class="text-xl font-bold text-indigo-600" id="stat-regions">-</div>
-                    <div class="text-xs text-gray-600">Regions</div>
+                <div class="stat-item" role="group" aria-labelledby="stat-regions-label">
+                    <div class="text-xl font-bold text-indigo-600" id="stat-regions" aria-live="polite">-</div>
+                    <div class="text-xs text-gray-600" id="stat-regions-label">Regions</div>
                 </div>
-                <div class="stat-item">
-                    <div class="text-xl font-bold text-purple-600" id="stat-subregions">-</div>
-                    <div class="text-xs text-gray-600">Subregions</div>
+                <div class="stat-item" role="group" aria-labelledby="stat-subregions-label">
+                    <div class="text-xl font-bold text-purple-600" id="stat-subregions" aria-live="polite">-</div>
+                    <div class="text-xs text-gray-600" id="stat-subregions-label">Subregions</div>
                 </div>
-                <div class="stat-item">
-                    <div class="text-xl font-bold text-pink-600" id="stat-countries">-</div>
-                    <div class="text-xs text-gray-600">Countries</div>
+                <div class="stat-item" role="group" aria-labelledby="stat-countries-label">
+                    <div class="text-xl font-bold text-pink-600" id="stat-countries" aria-live="polite">-</div>
+                    <div class="text-xs text-gray-600" id="stat-countries-label">Countries</div>
                 </div>
-                <div class="stat-item">
-                    <div class="text-xl font-bold text-blue-600" id="stat-states">-</div>
-                    <div class="text-xs text-gray-600">States</div>
+                <div class="stat-item" role="group" aria-labelledby="stat-states-label">
+                    <div class="text-xl font-bold text-blue-600" id="stat-states" aria-live="polite">-</div>
+                    <div class="text-xs text-gray-600" id="stat-states-label">States</div>
                 </div>
-                <div class="stat-item">
-                    <div class="text-xl font-bold text-green-600" id="stat-cities">-</div>
-                    <div class="text-xs text-gray-600">Cities</div>
+                <div class="stat-item" role="group" aria-labelledby="stat-cities-label">
+                    <div class="text-xl font-bold text-green-600" id="stat-cities" aria-live="polite">-</div>
+                    <div class="text-xs text-gray-600" id="stat-cities-label">Cities</div>
                 </div>
             </div>
         </div>
-    </div>    <!-- Loading Overlay -->
-    <div id="loadingOverlay" class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center z-30">
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center z-30" role="dialog" aria-modal="true" aria-labelledby="loading-title">
         <div class="bg-white rounded-lg p-8 shadow-2xl text-center max-w-sm">
-            <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-indigo-600 mx-auto mb-4"></div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Loading Database</h3>
-            <p class="text-gray-600 text-sm" id="loadingStatus">Initializing...</p>
-            <div class="mt-4 w-full bg-gray-200 rounded-full h-2">
+            <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-indigo-600 mx-auto mb-4" role="status" aria-label="Loading"></div>
+            <h3 id="loading-title" class="text-xl font-bold text-gray-800 mb-2">Loading Database</h3>
+            <p class="text-gray-600 text-sm" id="loadingStatus" aria-live="polite">Initializing...</p>
+            <div class="mt-4 w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                 <div id="loadingProgress" class="bg-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
             </div>
         </div>
     </div>
 
     <!-- Page Content -->
-    <div class="container mx-auto flex flex-wrap py-3 px-3 gap-3">
+    <main id="main-content" class="container mx-auto flex flex-wrap py-3 px-3 gap-3" role="main">
         <!-- Regions -->
-        <section class="flex-1 min-w-[200px]">
+        <section class="data-column flex-1 min-w-[200px]" aria-labelledby="regions-heading">
             <div class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-4 py-3">
-                    <h2 class="text-lg font-bold flex items-center justify-between">
-                        <span>🌐 Regions</span>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="regions-count">0</span>
+                    <h2 id="regions-heading" class="text-lg font-bold flex items-center justify-between">
+                        <span>Regions</span>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="regions-count" aria-label="Total regions">0</span>
                     </h2>
                 </div>
                 <div class="px-4 py-2 border-b">
+                    <label for="search-regions" class="sr-only">Search regions</label>
                     <input id="search-regions" type="search"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
-                        oninput="filter('regions')" placeholder="🔍 Search regions...">
+                        oninput="filter('regions')" placeholder="Search regions..." aria-describedby="regions-count">
                 </div>
-                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);">
-                    <table id="regions" class="w-full">
-                        <tbody class="regions-tb">
+                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);" tabindex="0" role="region" aria-label="Regions list">
+                    <table id="regions" class="w-full" role="list">
+                        <tbody class="regions-tb" aria-live="polite">
                             <!-- Filled via JS -->
                         </tbody>
                     </table>
@@ -148,25 +212,26 @@
         </section>
 
         <!-- Subregions -->
-        <section class="flex-1 min-w-[200px]">
+        <section class="data-column flex-1 min-w-[200px]" aria-labelledby="subregions-heading">
             <div class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-3">
-                    <h2 class="text-lg font-bold flex items-center justify-between">
-                        <span>📍 Subregions</span>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="subregions-count">0</span>
+                    <h2 id="subregions-heading" class="text-lg font-bold flex items-center justify-between">
+                        <span>Subregions</span>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="subregions-count" aria-label="Total subregions">0</span>
                     </h2>
                 </div>
                 <div class="px-4 py-2 border-b">
+                    <label for="search-subregions" class="sr-only">Search subregions</label>
                     <input id="search-subregions" type="search"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
-                        oninput="filter('subregions')" placeholder="🔍 Search subregions...">
+                        oninput="filter('subregions')" placeholder="Search subregions..." aria-describedby="subregions-count">
                 </div>
-                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);">
-                    <table id="subregions" class="w-full">
-                        <tbody class="subregions-tb">
+                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);" tabindex="0" role="region" aria-label="Subregions list">
+                    <table id="subregions" class="w-full" role="list">
+                        <tbody class="subregions-tb" aria-live="polite">
                             <tr>
-                                <td class="px-4 py-8 text-center text-gray-400 text-sm">
-                                    👈 Select a region
+                                <td class="px-4 py-8 text-center text-gray-400 text-sm empty-state">
+                                    <span aria-hidden="true">←</span> Select a region
                                 </td>
                             </tr>
                         </tbody>
@@ -176,25 +241,26 @@
         </section>
 
         <!-- Countries -->
-        <section class="flex-1 min-w-[200px]">
+        <section class="data-column flex-1 min-w-[200px]" aria-labelledby="countries-heading">
             <div class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 <div class="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-4 py-3">
-                    <h2 class="text-lg font-bold flex items-center justify-between">
-                        <span>🏳️ Countries</span>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="countries-count">0</span>
+                    <h2 id="countries-heading" class="text-lg font-bold flex items-center justify-between">
+                        <span>Countries</span>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="countries-count" aria-label="Total countries">0</span>
                     </h2>
                 </div>
                 <div class="px-4 py-2 border-b">
+                    <label for="search-countries" class="sr-only">Search countries</label>
                     <input id="search-countries" type="search"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-sm"
-                        oninput="filter('countries')" placeholder="🔍 Search countries...">
+                        oninput="filter('countries')" placeholder="Search countries..." aria-describedby="countries-count">
                 </div>
-                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);">
-                    <table id="countries" class="w-full">
-                        <tbody class="countries-tb">
+                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);" tabindex="0" role="region" aria-label="Countries list">
+                    <table id="countries" class="w-full" role="list">
+                        <tbody class="countries-tb" aria-live="polite">
                             <tr>
-                                <td class="px-4 py-8 text-center text-gray-400 text-sm">
-                                    👈 Select a subregion
+                                <td class="px-4 py-8 text-center text-gray-400 text-sm empty-state">
+                                    <span aria-hidden="true">←</span> Select a subregion
                                 </td>
                             </tr>
                         </tbody>
@@ -204,25 +270,26 @@
         </section>
 
         <!-- States -->
-        <section class="flex-1 min-w-[200px]">
+        <section class="data-column flex-1 min-w-[200px]" aria-labelledby="states-heading">
             <div class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3">
-                    <h2 class="text-lg font-bold flex items-center justify-between">
-                        <span>🏛️ States</span>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="states-count">0</span>
+                    <h2 id="states-heading" class="text-lg font-bold flex items-center justify-between">
+                        <span>States</span>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="states-count" aria-label="Total states">0</span>
                     </h2>
                 </div>
                 <div class="px-4 py-2 border-b">
+                    <label for="search-states" class="sr-only">Search states</label>
                     <input id="search-states" type="search"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                        oninput="filter('states')" placeholder="🔍 Search states...">
+                        oninput="filter('states')" placeholder="Search states..." aria-describedby="states-count">
                 </div>
-                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);">
-                    <table id="states" class="w-full">
-                        <tbody class="states-tb">
+                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);" tabindex="0" role="region" aria-label="States list">
+                    <table id="states" class="w-full" role="list">
+                        <tbody class="states-tb" aria-live="polite">
                             <tr>
-                                <td class="px-4 py-8 text-center text-gray-400 text-sm">
-                                    👈 Select a country
+                                <td class="px-4 py-8 text-center text-gray-400 text-sm empty-state">
+                                    <span aria-hidden="true">←</span> Select a country
                                 </td>
                             </tr>
                         </tbody>
@@ -232,25 +299,26 @@
         </section>
 
         <!-- Cities -->
-        <section class="flex-1 min-w-[200px]">
+        <section class="data-column flex-1 min-w-[200px]" aria-labelledby="cities-heading">
             <div class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 <div class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3">
-                    <h2 class="text-lg font-bold flex items-center justify-between">
-                        <span>🏙️ Cities</span>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="cities-count">0</span>
+                    <h2 id="cities-heading" class="text-lg font-bold flex items-center justify-between">
+                        <span>Cities</span>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full" id="cities-count" aria-label="Total cities">0</span>
                     </h2>
                 </div>
                 <div class="px-4 py-2 border-b">
+                    <label for="search-cities" class="sr-only">Search cities</label>
                     <input id="search-cities" type="search"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
-                        oninput="filter('cities')" placeholder="🔍 Search cities...">
+                        oninput="filter('cities')" placeholder="Search cities..." aria-describedby="cities-count">
                 </div>
-                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);">
-                    <table id="cities" class="w-full">
-                        <tbody class="cities-tb">
+                <div class="flex-1 overflow-auto" style="max-height: calc(100vh - 280px);" tabindex="0" role="region" aria-label="Cities list">
+                    <table id="cities" class="w-full" role="list">
+                        <tbody class="cities-tb" aria-live="polite">
                             <tr>
-                                <td class="px-4 py-8 text-center text-gray-400 text-sm">
-                                    👈 Select a state
+                                <td class="px-4 py-8 text-center text-gray-400 text-sm empty-state">
+                                    <span aria-hidden="true">←</span> Select a state
                                 </td>
                             </tr>
                         </tbody>
@@ -258,49 +326,40 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
     <!-- /.container -->
 
     <!-- Modal -->
-    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-30">
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-75"></div>
-        <div class="modal-container bg-white w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-2xl z-50 overflow-hidden">
-            <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50 hover:scale-110 transition-transform">
-                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18">
-                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                </svg>
-                <span class="text-xs">(Esc)</span>
-            </div>
-
+    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-30" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" aria-hidden="true">
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-75" aria-hidden="true"></div>
+        <div class="modal-container bg-white w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-2xl z-50 overflow-hidden" role="document">
             <div class="modal-header bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4">
                 <div class="flex justify-between items-center">
                     <div>
-                        <p class="text-2xl font-bold modal-title"></p>
+                        <h3 id="modal-title-text" class="text-2xl font-bold modal-title"></h3>
                         <p class="text-sm opacity-90 mt-1 modal-subtitle"></p>
                     </div>
-                    <div class="modal-close cursor-pointer hover:scale-110 transition-transform">
-                        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18">
+                    <button class="modal-close cursor-pointer hover:scale-110 transition-transform p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close dialog">
+                        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18" aria-hidden="true">
                             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                         </svg>
-                    </div>
+                    </button>
                 </div>
             </div>
 
             <div class="modal-content py-6 px-6 max-h-[70vh] overflow-y-auto">
-                <pre id="modal-code" class="text-xs mb-4"></pre>
+                <pre id="modal-code" class="text-xs mb-4" tabindex="0" aria-label="JSON data"></pre>
 
                 <div class="flex justify-end pt-4 border-t mt-4">
-                    <button class="bg-indigo-600 hover:bg-indigo-700 text-sm text-white px-4 py-2 rounded-lg transition-colors copy-to-clipboard">
-                        📋 Copy JSON
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-sm text-white px-4 py-2 rounded-lg transition-colors copy-to-clipboard focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-live="polite">
+                        Copy JSON
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Vendor JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
+    <!-- Country Flag Emoji Polyfill -->
     <script type="module" defer>
         import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
         polyfillCountryFlagEmojis();
