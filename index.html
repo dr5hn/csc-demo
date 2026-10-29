@@ -56,7 +56,7 @@
     <link rel="preconnect" href="https://raw.githubusercontent.com" />
 
     <!-- Vendor CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
     <!-- Custom Styles -->
     <link href="css/app.css" rel="stylesheet" />
@@ -361,8 +361,11 @@
 
     <!-- Country Flag Emoji Polyfill -->
     <script type="module" defer>
-        import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
-        polyfillCountryFlagEmojis();
+        import { polyfillCountryFlagEmojis } from "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1.10/dist/index.mjs";
+        polyfillCountryFlagEmojis(
+            "Twemoji Country Flags",
+            "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1.10/dist/TwemojiCountryFlags.woff2"
+        );
     </script>
 
     <!-- Custom Script -->
